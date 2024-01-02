@@ -1,0 +1,23 @@
+vi /etc/systemd/system/bookstorecatalog.service
+
+[Unit]
+Description=Spring Boot catalog
+After=syslog.target
+After=network.target[Service]
+User=username
+Type=simple
+
+[Service]
+ExecStart=/usr/bin/java -jar /home/mydev/myspringback/bookstore-application-parent/bookstore-catalog-service/target/bookstorecatatest.jar 
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=helloworld
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+sudo systemctl start bookstorecatalog.service
+

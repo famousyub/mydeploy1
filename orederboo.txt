@@ -1,0 +1,26 @@
+/home/mydev/myspringback/bookstore-application-parent/bookstore-order-service/target/bookstoreorder.jar 
+
+
+
+
+vi /etc/systemd/system/bookstoreorder.service
+
+[Unit]
+Description=Spring Boot bookstore
+After=syslog.target
+After=network.target[Service]
+User=username
+Type=simple
+
+[Service]
+ExecStart=/usr/bin/java -jar /home/mydev/myspringback/bookstore-application-parent/bookstore-order-service/target/bookstoreorder.jar 
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=bookstoreorder
+
+[Install]
+WantedBy=multi-user.target
+
+
+sudo systemctl start bookstoreorder.service

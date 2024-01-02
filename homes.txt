@@ -1,0 +1,11 @@
+/home/mydev/myspringback/bookstore-application-parent/bookstore-eureka-dis
+covery-service/target/testeureka.jar
+
+
+
+
+/home/mydev/myspringback/bookstore-application-parent/bookstore-account-service/target/bookstoretest.jar
+
+
+sudo systemctl start bookstoreaccount.service
+
